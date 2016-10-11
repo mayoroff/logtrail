@@ -97,6 +97,14 @@ html,body {
 	text-decoration: none;
 }
 
+.level a {
+	color: #FFFF00;
+}
+
+.level a:hover {
+	text-decoration: none;
+}
+
 .message {
 	color: #B0B0B0;
 }
