@@ -386,6 +386,11 @@ app.controller('logtrail', function ($scope, kbnUrl, $route, $routeParams, es, c
     $scope.userSearchText = config.fields.mapping['program'] + ': \'' + program + '\'';
     $scope.onSearchClick();
   };
+  
+  $scope.onLevelClick = function (level) {
+    $scope.userSearchText = config.fields.mapping['level'] + ': \'' + level + '\'';
+    $scope.onSearchClick();
+  };
 
   $scope.getLiveTailStatus = function () {
     if ($scope.liveTailStatus === 'Live') {
