@@ -14,7 +14,7 @@
         "display_timestamp" : "@timestamp",
         "hostname" : "beat.hostname",
         "program": "app",
-        "message": "msg"
+        "message": "msg",
         "level": "level"
     }
   }
