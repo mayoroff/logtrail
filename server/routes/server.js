@@ -42,7 +42,7 @@ module.exports = function (server) {
         index: config.es.default_index,
         size: config.max_buckets,
         body : {
-          sort : [ { "field1": { "@timestamp": "desc" }}, { "offset": { "order": "desc" }}],
+          sort : [ { "field1": { "@timestamp": request.payload.order }}, { "offset": { "order": request.payload.order }}],
           query : {
             filtered : {
               query : {
@@ -65,7 +65,7 @@ module.exports = function (server) {
       };
 
       //By default Set sorting column to timestamp
-      searchRequest.body.sort[0][config.fields.mapping.timestamp] = {'order':request.payload.order ,'unmapped_type': 'boolean'};
+      //searchRequest.body.sort[0][config.fields.mapping.timestamp] = {'order':request.payload.order ,'unmapped_type': 'boolean'};
 
       //If hostname is present then term query.
       if (request.payload.hostname != null) {
