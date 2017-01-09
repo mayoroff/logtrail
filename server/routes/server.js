@@ -42,7 +42,7 @@ module.exports = function (server) {
         index: config.es.default_index,
         size: config.max_buckets,
         body : {
-          sort : [{}],
+          sort : [ { "field1": { "@timestamp": "asc" }}, { "offset": { "order": "asc" }}],
           query : {
             filtered : {
               query : {
